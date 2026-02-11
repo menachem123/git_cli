@@ -9,3 +9,15 @@ def load_csv_function (csv):
 
     return External_list
 
+
+def external_ip(all_ip):
+    list_external_ip = []
+    for ip in all_ip:
+        if not ip[1].startswith("192.168") and not ip[1].startswith("10"):
+            list_external_ip.append(ip)
+
+    return list_external_ip
+
+
+
+
