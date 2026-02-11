@@ -18,6 +18,12 @@ def external_ip(all_ip):
 
     return list_external_ip
 
+def sensitive_port (port):
+    list_sensitive_port = []
+    for ip in port:
+        if not ip[4] == "SSH" and not ip[4] == "Telnet" and not ip[4] == "RDP" :
+            list_sensitive_port.append(ip)
 
+    return list_sensitive_port
 
 
