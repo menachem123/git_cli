@@ -34,4 +34,16 @@ def packet_large (size):
 
     return list_packet_large
 
+def traffic_tagging (all_size):
+    list_traffic_tagging = []
+    large = "LARGE"
+    normal = "NORMAL"
+    for ip in all_size:
+        if ip[5] > "5000":
+            list_traffic_tagging.append(ip)
+            ip.append(large)
+        else:
+            list_traffic_tagging.append(ip)
+            ip.append(normal)
+    return list_traffic_tagging
 
