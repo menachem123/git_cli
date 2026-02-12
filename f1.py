@@ -13,14 +13,14 @@ def external_ip(source_ip):
     list_external_ip = []
     for ip in source_ip:
         if not ip[1].startswith("192.168") and not ip[1].startswith("10"):
-            list_external_ip.append(ip)
+            list_external_ip.append(ip[1])
 
     return list_external_ip
 
-def sensitive_port (protoco):
+def sensitive_port (prot):
     list_sensitive_port = []
-    for ip in protoco:
-        if not ip[4] == "SSH" and not ip[4] == "Telnet" and not ip[4] == "RDP" :
+    for ip in prot:
+        if not ip[3] == "22" and not ip[3] == "23" and not ip[3] == " 3389" :
             list_sensitive_port.append(ip)
 
     return list_sensitive_port
